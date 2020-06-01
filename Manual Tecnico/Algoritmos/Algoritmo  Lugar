@@ -1,0 +1,36 @@
+Inicio Lugar
+
+    var cantidadHoteles
+    var cantidadCasas
+    var costoEstancia
+    var precioCasa
+    var precioHotel
+    pvar grupoColor
+    
+
+   Funcion mostrarCantidadHoteles() 
+        retornar cantidadHoteles
+    
+
+    Funcion mostrarCantidadCasas() 
+        retornar cantidadCasas
+    
+
+    Funcion mostrarCostoEstancia() 
+        retornar costoEstancia
+    
+
+    Funcion mostrarPrecioCasa() 
+        retornar precioCasa
+    
+
+    Funcion mostrarPrecioHotel() 
+        retornar precioHotel
+    
+    Funcion mostrarGrupoColor() 
+        retornar grupoColor
+    
+    Funcion toString()
+        retornar super.toString() + "\nColor = " + getGrupoColor()
+    
+Fin Lugar

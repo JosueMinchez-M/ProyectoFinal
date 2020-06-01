@@ -1,0 +1,56 @@
+Procedimiento tableroBotonesAutomatico(var panel, var filas, var columnas, var cantDineroVuelta, var cantCasas, var cantHoteles)
+
+
+        var matrizBotones
+        casillasFijas
+        capturarLugar
+        capturarServicio
+        capturarEstacion
+        
+        para (var i = 0; i < tamaño Filas; i++) 
+            para (var j = 0; j < tamaño Columna; j++)
+                matrizBotones[i][j] tamaño botones(50, 50)
+                Agregar matriz de botones al Panel
+
+        casillasDefinidas
+        casillasInferiorAutomaticas
+        casillasIzquierdaAutomaticas
+        casillasDerechaAutomaticas
+        casillasSuperiorAutomaticas
+
+
+    Procedimiento tableroBotones(var panel, var filas, var columnas){
+        casillasFijas
+        
+        para (var i = 0; i < tamaño Filas; i++) 
+            para (var j = 0; j < tamaño Columna; j++)
+                matrizBotones[i][j] tamaño botones(50, 50)
+                Agregar matriz de botones al Panel
+
+        casillasDefinidas
+        casillaServicioCreada
+        casillaEstacionCreada 
+        casillaColor = 
+        colorGruposFilaInferior
+        colorGruposColumnaIzquierda
+        colorGruposFilaSuperior
+        colorGruposColumnaDerecha
+        sumaLugaresTablero = lugaresInferior+lugaresIzquierda+lugaresSuperior+lugaresDerecha
+        lugaresTamaño
+        casillaLugarIngresado
+    
+
+    Procedimiento tableroBotonesCreada(var panel)
+        casillasFijas
+        
+        para (var i = 0; i < tamaño Filas; i++) 
+            para (var j = 0; j < tamaño Columna; j++)
+                matrizBotones[i][j] tamaño botones(50, 50)
+                Agregar matriz de botones al Panel
+
+        casillasDefinida
+        mostrarPropiedadLugarFilaInferior
+        mostrarPropiedadLugarIzquierda
+        mostrarPropiedadLugarSuperior
+        mostrarPropiedadLugarDerecha
+        mostrarSoE

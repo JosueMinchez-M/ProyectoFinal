@@ -1,0 +1,30 @@
+Inicio Tarjeta
+    
+    var cantidadPremio
+    var cantPagoJugadores
+    var cantidadCasillas
+
+    Funcion mostrarCantidadPremio() 
+        retornar cantidadPremio
+    
+
+    Procedimiento obtenerCantidadPremio(var cantidadPremio) 
+        cantidadPremio = cantidadPremio
+    
+
+    Funcion mostrarCantPagoJugadores() 
+        retornar cantPagoJugadores
+    
+
+    Procedimiento obtenerCantPagoJugadores(var cantPagoJugadores) 
+        cantPagoJugadores = cantPagoJugadores
+    
+
+    Funcion mostrarCantidadCasillas() 
+        retornar cantidadCasillas
+    
+
+    Procedimiento obtenerCantidadCasillas(int cantidadCasillas) 
+        cantidadCasillas = cantidadCasillas
+    
+Fin Tarjeta

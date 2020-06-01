@@ -1,0 +1,8 @@
+Inicio Estacion
+    
+    var costoUsoEstacion
+
+    Funcion getCostoUsoEstacion() 
+        retornar costoUsoEstacion
+
+Fin Estacion

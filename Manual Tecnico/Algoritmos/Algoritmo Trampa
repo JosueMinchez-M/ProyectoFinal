@@ -1,0 +1,30 @@
+Inicio Trampa
+    
+    var cantCasillasRecorridas
+    var cantidadMulta
+    var perderTurno
+    
+
+    Funcion getCantCasillasRecorridas() 
+        retornar cantCasillasRecorridas
+    
+
+    Funcion setCantCasillasRecorridas(var cantCasillasRecorridas) 
+        cantCasillasRecorridas = cantCasillasRecorridas;
+    
+
+    Funcion getCantidadMulta() 
+        retornar cantidadMulta
+    
+
+    Procedimiento setCantidadMulta(var cantidadMulta) 
+        cantidadMulta = cantidadMulta
+    
+
+    Funcion getPerderTurno() 
+        retornar perderTurno
+    
+
+    Funcion setPerderTurno(var perderTurno) 
+        perderTurno = perderTurno
+Fin Trampa

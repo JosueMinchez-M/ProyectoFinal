@@ -1,0 +1,13 @@
+
+Inicio Casilla
+    
+    var Tipo
+    
+
+    Funcion MostrarTipo()
+        retornar Tipo
+
+    Procedimiento obtenerTipo(var Tipo) 
+        Tipo = Tipo
+        
+Fin Casilla

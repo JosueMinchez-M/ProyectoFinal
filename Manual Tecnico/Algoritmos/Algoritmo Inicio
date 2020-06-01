@@ -1,0 +1,13 @@
+
+Inicio CasillaInicio
+    
+    var cantidadDineroVuelta
+
+
+    Funcion getCantidadDineroVuelta()
+        retornar cantidadDineroVuelta
+
+    Procedimiento setCantidadDineroVuelta(var cantidadDineroVuelta)
+        cantidadDineroVuelta = cantidadDineroVuelta
+        
+Fin CasillaInicio

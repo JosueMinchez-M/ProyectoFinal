@@ -1,0 +1,34 @@
+Inicio Propiedad
+    
+    var nombrePropiedad
+    var dueñoPropiedad
+    var precioCompra
+    var precioHipoteca
+    var estadoHipoteca
+
+
+    Funcion mostrarNombrePropiedad() 
+        retornar nombrePropiedad
+    
+
+    Funcion mostrarDueñoPropiedad() 
+        retornar dueñoPropiedad
+    
+
+    Funcion mostrarPrecioCompra() 
+        retornar precioCompra
+    
+
+    Funcion mostrarPrecioHipoteca() 
+        retornar precioHipoteca
+    
+
+    FUncion mostrarEstadoHipoteca() 
+        retornar estadoHipoteca
+    
+   
+    Funcion String toString()
+        retornar "\nNombre Propiedad = " + getNombrePropiedad() + "\nDueño Propiedad = " + getDueñoPropiedad() + "\nPrecio Compra = " + getPrecioCompra()+
+                "\nPrecio Hipoteca = " + getPrecioHipoteca() + "\nEstado Hipoteca = " + isEstadoHipoteca()
+
+Fin Propiedad

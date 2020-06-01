@@ -1,0 +1,483 @@
+Inicio MovimientoThread
+   
+    var Filas, Columnas
+    var jugadores
+    var casillaInicio
+    var casillaNeutraCarcel, casillaNeutraDescanso
+    var casillaTrampa
+    var casillaTomaTarjeta
+    var casillaLugar, casillaLugarIngresado
+    var casillaServicio, casillaServicioCreada
+    var casillaEstacion, casillaEstacionCreada
+    var matrizBotones
+    var sumaAux;
+    var sumaDados
+    var cantLugaresPorFoC
+    var numCasillaTrampa, numCasillaTarjeta
+    var contadorMostrar = -1
+
+
+    Sincronizar run()
+        para (var i = Filas-1; i < Filas; i++) 
+            para (var j = Columnas-1; j >= (Columnas-1)-sumaDados; j--) 
+                intentar 
+                    si(Filas == 10 && Columnas == 10)
+                        casillasDefinidas
+                        casillasInferiorAutomaticas
+                        matrizBotones[i][j] obtener ficha jugadores
+                        si(j <= 0 )
+                            sumaAux = sumaDados-(Columnas-1)
+                            para (var k = Filas-2; k >= (Filas-1)-sumaAux ; k--)
+                                par (var l = 0; l < 1; l++) 
+                                    casillasDefinidas
+                                    casillasIzquierdaAutomaticas
+                                    matrizBotones[k][l] obtener ficha
+                                    para(k <= 0)
+                                        sumaAux = sumaAux-(Filas-1)
+                                        para (int m = 0; m < 1; m++)
+                                            para (int n = 1; n <= sumaAux; n++)
+                                                casillasDefinidas
+                                                casillasSuperiorAutomaticas
+                                                matrizBotones[m][n] obtener ficha Jugador
+                                                si(n >= 9)
+                                                    sumaAux = sumaAux - (Columnas-1)
+                                                    para (var o = 1; o <= sumaAux; o++) 
+                                                        para (var p = Columnas-1; p < Columnas; p++) 
+                                                            casillasDefinidas
+                                                            casillasDerechaAutomaticas
+                                                            matrizBotones[o][p] obtener ficha jugador
+                        
+                                            entonces
+                                                casillasDefinidas
+                                                casillasInferiorAutomaticas
+                                                matrizBotones[i][j] obtener ficha jugadores
+                                                si(j <= 0 )
+                                                    sumaAux = sumaDados-(Columnas-1)
+                                                    para (var k = Filas-2; k >= (Filas-1)-sumaAux ; k--)
+                                                        par (var l = 0; l < 1; l++) 
+                                                            casillasDefinidas
+                                                            casillasIzquierdaAutomaticas
+                                                            matrizBotones[k][l] obtener ficha
+                                                            para(k <= 0)
+                                                                sumaAux = sumaAux-(Filas-1)
+                                                                para (int m = 0; m < 1; m++)
+                                                                    para (int n = 1; n <= sumaAux; n++)
+                                                                        casillasDefinidas
+                                                                        casillasSuperiorAutomaticas
+                                                                        matrizBotones[m][n] obtener ficha Jugador
+                                                                        si(n >= 9)
+                                                                            sumaAux = sumaAux - (Columnas-1)
+                                                                            para (var o = 1; o <= sumaAux; o++) 
+                                                                                para (var p = Columnas-1; p < Columnas; p++) 
+                                                                                    casillasDefinidas
+                                                                                    casillasDerechaAutomaticas
+                                                                                    matrizBotones[o][p] obtener ficha jugador
+             
+                atrapar
+            "FIN DE TU RECORRIDO "
+        
+    Procedimiento mostrarPropiedadLugarFilaInferior7x7()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++;
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarIzquierda7x7()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++;
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarSuperior7x7()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarDerecha7x7()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarFilaInferior8x8()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++;
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarIzquierda8x8()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++;
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarSuperior8x8()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++;
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarDerecha8x8()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarFilaInferior9x9()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++;
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarIzquierda9x9()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++;
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarSuperior9x9()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++;
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+    Procedimiento mostrarPropiedadLugarDerecha9x9()
+        para (var i = Fila -1; i < Filas; i++) 
+            para (var j = Columna-2; j >= numCasillaTrampa+1; j--) 
+                si(i == Filas -1 && j == Columnas -2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == Columnas-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+ 
+        para (var i = Filas-1; i <= Filas-1; i++) 
+            para (var j = numCasillaTrampa-2; j >= 1; j--) 
+                si(i == Filas-1 && j == numCasillaTrampa-2)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-3)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+                entonces si(i == Filas-1 && j == numCasillaTrampa-4)
+                    contadorMostrar++
+                    matrizBotones[i][j] Obtener Color
+                    matrizBotones[i][j] Obtener nombre
+
+
+    Procedimiento mostrarPropiedadLugarInferior()
+        si(cantLugaresPorFoC == 4)
+            mostrarPropiedadLugarFilaInferior8x8
+        entonces si(cantLugaresPorFoC == 5)
+            mostrarPropiedadLugarFilaInferior9x9
+        entonces si(cantLugaresPorFoC == 3)
+            mostrarPropiedadLugarFilaInferior7x7
+
+    Procedimiento mostrarPropiedadLugarIzquierda()
+        si(cantLugaresPorFoC == 4)
+            mostrarPropiedadLugarIzquierda8x8
+        entonces si(cantLugaresPorFoC == 5)
+            mostrarPropiedadLugarIzquierda9x9
+        entonces si(cantLugaresPorFoC == 3)
+            mostrarPropiedadLugarIzquierda7x7
+
+    Procedimiento mostrarPropiedadLugarSuperior()
+        si(cantLugaresPorFoC == 4)
+            mostrarPropiedadLugarSuperior8x8
+        entonces si(cantLugaresPorFoC == 5)
+            mostrarPropiedadLugarSuperior9x9
+        entonces si(cantLugaresPorFoC == 3)
+            mostrarPropiedadLugarSuperior7x7
+
+    Procedimiento mostrarPropiedadLugarDerecha()
+        si(cantLugaresPorFoC == 4)
+            mostrarPropiedadLugarDerecha8x8
+        entonces si(cantLugaresPorFoC == 5)
+            mostrarPropiedadLugarDerecha9x9
+        entonces si(cantLugaresPorFoC == 3)
+            mostrarPropiedadLugarDerecha7x7
+Fin MovimientosThread

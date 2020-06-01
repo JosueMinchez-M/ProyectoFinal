@@ -1,0 +1,8 @@
+Inicio ServicioBasico
+    
+    var costoServicio
+
+    Funcion getCostoServicio()
+        retornar costoServicio
+
+Fin ServicioBasico
